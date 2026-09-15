@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Survey Harvest rewards your opinions with points.">
+    <title>Survey Harvest | Share your take</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="#home" aria-label="Survey Harvest home"><span class="brand-mark">SH</span><span>Survey <strong>Harvest</strong></span></a>
+        <nav aria-label="Main navigation"><a class="nav-link active" href="#home">Explore</a><a class="nav-link" href="#history">My activity</a><span class="developer-credit"><img src="software.png" alt="Developer software icon"> FELIX ODERO @MOODLE</span><button class="profile-button" id="profileButton" type="button"><span id="profileInitial">G</span><span id="profileName">Guest</span><span aria-hidden="true">⌄</span></button></nav>
+    </header>
+    <main id="app">
+        <section class="auth-screen" id="authScreen"><div class="auth-copy"><p class="eyebrow">YOUR OPINION HAS VALUE</p><h1>Turn everyday opinions into <em>real rewards.</em></h1><p class="lede">Take thoughtful surveys from brands shaping the world around you. It takes minutes, and every completed survey moves your balance forward.</p><div class="trust-row"><span>✓</span> Free to join <span>✓</span> Privacy-first <span>✓</span> Cash out from 500 pts</div></div>
+                <form class="auth-card" id="authForm"><div class="card-kicker">WELCOME TO THE HARVEST</div><h2 id="authTitle">Start earning points</h2><p class="muted" id="authDescription">Create your free member profile to see surveys matched to you.</p><div id="nameField"><label for="name">Your first name</label><input id="name" name="name" type="text" placeholder="e.g. Jordan" autocomplete="given-name" required></div><label for="email">Email address</label><input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required><label for="password">Password</label><input id="password" name="password" type="password" placeholder="At least 8 characters" minlength="8" autocomplete="current-password" required><button class="primary-button" id="authSubmit" type="submit">Create my account <span aria-hidden="true">→</span></button><button class="auth-toggle" id="authModeToggle" type="button">Already a member? Log in</button><p class="fine-print">Your account is securely stored on the Survey Harvest server.</p></form>
+        </section>
+        <section class="dashboard hidden" id="dashboard" aria-live="polite"><div class="dashboard-heading"><div><p class="eyebrow">MEMBER DASHBOARD</p><h1>Good to see you, <span id="welcomeName">Guest</span>.</h1><p class="lede">Fresh opportunities, hand-picked for your perspective.</p></div><div class="wallet"><span class="wallet-icon">✦</span><div><span class="wallet-label">AVAILABLE BALANCE</span><strong><span id="pointsBalance">0</span> pts</strong><small>100 pts = $1.00 · minimum 500 pts</small></div></div></div><form class="payout-form" id="payoutForm"><strong>Redeem your points</strong><span>Connect Stripe once, then request a payout securely.</span><button id="connectStripe" type="button">Connect Stripe</button><input id="payoutPoints" type="number" min="500" step="1" placeholder="Points to redeem"><button type="submit">Request payout →</button></form>
+            <div class="stats-row"><div><strong id="completedCount">0</strong><span>Surveys completed</span></div><div><strong>4.9/5</strong><span>Average rating</span></div><div><strong>2,400+</strong><span>Members earning</span></div></div><div class="section-heading"><div><p class="eyebrow">OPEN OPPORTUNITIES</p><h2>Surveys for you</h2></div><span class="sort-note">Updated just now · Sorted by match</span></div><div class="survey-grid" id="surveyGrid"></div>
+            <section class="how-it-works" id="history"><div><p class="eyebrow">HOW IT WORKS</p><h2>A little time. A meaningful say.</h2></div><div class="steps"><div><b>01</b><strong>Choose a survey</strong><span>Pick a topic that interests you.</span></div><div><b>02</b><strong>Share honestly</strong><span>Your responses stay confidential.</span></div><div><b>03</b><strong>Collect your points</strong><span>Points land when you finish.</span></div></div></section>
+        </section><div class="toast" id="toast" role="status"></div>
+        <div class="modal-backdrop hidden" id="surveyModal"><form class="survey-modal" id="surveyForm"><button class="close-button" id="closeModal" type="button" aria-label="Close survey">×</button><p class="eyebrow" id="modalTag">SURVEY</p><h2 id="modalTitle">Survey question</h2><p id="modalDescription" class="muted"></p><fieldset><legend>Which answer best describes you?</legend><label><input type="radio" name="answer" value="Often" required> Often</label><label><input type="radio" name="answer" value="Sometimes"> Sometimes</label><label><input type="radio" name="answer" value="Rarely"> Rarely</label></fieldset><button class="primary-button" type="submit">Submit response <span>→</span></button></form></div>
+    </main><footer><span>Survey Harvest</span><span>Secure account · Your data stays on this device</span></footer><script src="script.js"></script>
+</body>
+</html>
